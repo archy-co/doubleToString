@@ -4,11 +4,13 @@
 Authors (team): <mark>AUTHORS WITH GITHUB LINKS</mark><br>
 Variant: <mark>VARIANT SHOULD BE HERE</mark>
 ## Prerequisites
+Your should have `qt` and boost `installed`
 
-<mark>LIST LIBRARIES/TOOLS/OTHER UTILITIES THAT NEED TO BE INSTALLED (E.G. GCC, OPENMP, CMAKE ETC)</mark>
+##### Copyright note
+**double-conversion** directory contains google's double conversion headers and source files only (https://github.com/google/double-conversion)
+**ryu** directory contains ryu double conversion algoritm (https://github.com/ulfjack/ryu)
 
 ### Compilation
-
 <mark>HOW TO COMPILE YOUR PROGRAM? (RECOMMENDED: ./comile.sh)</mark>
 
 ### Installation
@@ -37,7 +39,7 @@ into the data folder</mark>
 <mark>IF APPLICABLE, LIST ALL THE EXTRA FEATURES YOU ADDED. PROVIDE DETAILS<mark>
 
 # ATTENTION!
-  
+
 Additional tasks not listed in the previous paragraph would not be graded.
 
 Be sure to provide a complete list of authors.
