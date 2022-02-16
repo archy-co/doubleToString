@@ -71,6 +71,18 @@ main (int argc, char **argv) {
         case 7:
             res = method7_google(numbers);
             break;
+        case 8:
+            res = method8_gcvt(numbers);
+            break;
+        case 9:
+            res = method9_ostringstream(numbers);
+            break;
+        case 10:
+            res = method10_strtk(numbers);
+            break;
+        case 11:
+            res = method11_custom(numbers);
+            break;
        default:
        {
             std::cerr << "Wrong method" << std::endl;

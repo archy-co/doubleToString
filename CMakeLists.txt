@@ -9,6 +9,8 @@ project(${PROJECT_NAME} C CXX) # project(${PROJECT_NAME} C CXX ASM)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 ##########################################################
 # User configurable options of the template
 ##########################################################
@@ -59,7 +61,10 @@ include(cmake/CompilerWarnings.cmake)
 add_executable(${PROJECT_NAME}
     src/main.cpp
     src/methods.cpp
-    include/methods.h)
+    include/methods.h
+    strtk/strtk.hpp
+    include/custom.h
+    src/custom.cpp)
 
 
 ##############     RYU double conversion algorithm    ######################
@@ -77,7 +82,6 @@ set(RYU_FILES
     ryu/f2s_intrinsics.h
     ryu/generic_128.c
     ryu/generic_128.h
-    ryu/Makefile
     ryu/ryu_generic_128.h
     ryu/ryu.h
     ryu/ryu_parse.h
@@ -127,6 +131,7 @@ target_link_libraries(${PROJECT_NAME} Boost::program_options)
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
 target_link_libraries(${PROJECT_NAME} ryu)
 target_link_libraries(${PROJECT_NAME} google-dtoa)
+
 target_include_directories(${PROJECT_NAME}
                     PUBLIC ${CMAKE_SOURCE_DIR}
                     PUBLIC ${CMAKE_SOURCE_DIR}/include)

@@ -4,14 +4,17 @@
 Authors (team): <mark>AUTHORS WITH GITHUB LINKS</mark><br>
 Variant: <mark>VARIANT SHOULD BE HERE</mark>
 ## Prerequisites
-Your should have `qt` and boost `installed`
+Your should have `qt` and `boost` installed
 
-##### Copyright note
+#### Copyright note
 **double-conversion** directory contains google's double conversion headers and source files only (https://github.com/google/double-conversion)
+
 **ryu** directory contains ryu double conversion algoritm (https://github.com/ulfjack/ryu)
 
+**cursom** is float to string implementation found on stack overflow. See link in custorm.h and custom.cpp for source
+
 ### Compilation
-<mark>HOW TO COMPILE YOUR PROGRAM? (RECOMMENDED: ./comile.sh)</mark>
+Compile either by hand with CMake file or runing `compile` script which does the job for you.
 
 ### Installation
 
@@ -21,15 +24,13 @@ Your should have `qt` and boost `installed`
 file and add your env to the `.gitignore` file!</mark>
 
 ### Usage
-
-<mark>PROVIDE AN EXAMPLE OF HOW TO RUN YOUR PROGRAM (IT CAN BE A_flag COMMAND LINE WITH INPUT AND EXPECTED OUTPUT)</mark>
-
-<mark>Note: if your project needs or generates any data, media and so on -- put them
-into the data folder</mark> 
+Run python script, found in project root directory, with arguments:
+* Number of test for each method -- indicates how many times each method will be run and the minimum number of all this runs will be taken
+* Input file, which stores floating point numbers in either normal notation or scientific. If you need to generate data we've already written a little function in `main.py`
+* Output file with results -- if it doesn't exist, it will be create by program
 
 ### Important!
-
-<mark>WHAT ELSE SHOULD WE KNOW ABOUT YOUR WORK? (E.G. KNOWN ISSUES, BUGS, SPECIAL BEHAVIOR ETC)</mark>
+C++ executable should be in *current working directory* in relation to python script. So this end, you should run python script from **bin** directory (assuming C++ executable is there) in order that python script finds it
 
 ### Results
 

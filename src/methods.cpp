@@ -1,4 +1,5 @@
 #include <cstddef>
+#include <cstdlib>
 #include <sstream>
 #include <string>
 #include <utility>
@@ -7,8 +8,10 @@
 #include <cstring>
 #include <boost/lexical_cast.hpp>
 #include <QString>
+#include "strtk/strtk.hpp"
 #include "ryu/ryu.h"
 #include "double-conversion/double-to-string.h"
+#include "custom.h"
 
 
 constexpr int maxNumberSize = 128;
@@ -131,6 +134,73 @@ std::pair<size_t, double> method7_google(const std::vector<double> & numbers) {
         char *fstr = builder.Finalize();
         length += strlen(fstr);
         builder.Reset();
+    }
+
+    res.first = length;
+    res.second = (double) length / numbers.size();
+
+    return res;
+}
+
+std::pair<size_t, double> method8_gcvt(const std::vector<double> & numbers) {
+    std::pair<size_t, double> res;
+    long long length = 0;
+
+    char str[maxNumberSize];
+
+    for (auto x: numbers) {
+        gcvt(x, 9, str);
+        length += strlen(str);
+    }
+
+    res.first = length;
+    res.second = (double) length / numbers.size();
+
+    return res;
+}
+
+std::pair<size_t, double> method9_ostringstream(const std::vector<double> & numbers)
+{
+    std::pair<size_t, double> res;
+
+    std::ostringstream oss;
+    oss.precision(9);
+
+    for (auto num : numbers)
+        oss << num;
+
+    size_t letter_count = oss.str().size();
+
+    res.first = letter_count;
+    res.second = (double) letter_count/numbers.size();
+    return res;
+}
+
+std::pair<size_t, double> method10_strtk(const std::vector<double> & numbers)
+{
+    std::pair<size_t, double> res;
+    long long length = 0;
+
+    for (auto num : numbers)
+    {
+        std::string str = strtk::type_to_string<double>(num);
+        length += str.size();
+    }
+
+    res.first = length;
+    res.second = (double) length/numbers.size();
+    return res;
+}
+
+std::pair<size_t, double> method11_custom(const std::vector<double> & numbers) {
+    std::pair<size_t, double> res;
+    long long length = 0;
+
+    char str[maxNumberSize];
+
+    for (auto x: numbers) {
+        float_to_string(x, str);
+        length += strlen(str);
     }
 
     res.first = length;
