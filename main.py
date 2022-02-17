@@ -18,7 +18,7 @@ def generate_data(input_fn : str):
 
 def experiment():
     EPSILON = 1e-16
-    NUM_METHODS = 11
+    NUM_METHODS = 13
     PROGAM_NAME = "dtos_time"
     if not os.path.exists(PROGAM_NAME):
         raise ValueError("C++ executable is not found in current directory. You must run this python script from the directory with C++ executable")

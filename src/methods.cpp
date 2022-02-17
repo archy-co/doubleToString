@@ -6,15 +6,19 @@
 #include <vector>
 #include <iostream>
 #include <cstring>
+#include <cstdio>
 #include <boost/lexical_cast.hpp>
 #include <QString>
+#include <charconv>
 #include "strtk/strtk.hpp"
 #include "ryu/ryu.h"
 #include "double-conversion/double-to-string.h"
 #include "custom.h"
+//#include "floaxie/ftoa.h"
 
 
 constexpr int maxNumberSize = 128;
+constexpr int ERROR_WORKING_WITH_TEMP_FILE = 7;
 
 // TODO: Fix casts to C++ style
 
@@ -208,3 +212,94 @@ std::pair<size_t, double> method11_custom(const std::vector<double> & numbers) {
 
     return res;
 }
+
+std::pair<size_t, double> method12_write_to_file(const std::vector<double> & numbers)
+{
+    char fn[] = ".temp_conv";
+
+    std::ofstream ofile;
+    ofile.open(fn);
+    ofile.clear();
+    ofile.close();
+    if (ofile.fail())
+    {
+        std::cerr << "Error initializing temporary file in method 12" << std::endl;
+        exit(ERROR_WORKING_WITH_TEMP_FILE);
+    }
+
+    std::ifstream ifile;
+
+    std::pair<size_t, double> res;
+    long long length = 0;
+
+    for (auto x: numbers) {
+        ofile.open(fn);
+        ofile << x;
+        ofile.close();
+        if (ofile.fail())
+        {
+            std::cerr << "Failed writing to temporary file in method 12" << std::endl;
+            exit(ERROR_WORKING_WITH_TEMP_FILE);
+        }
+
+        std::string str;
+
+        ifile.open(fn);
+        ifile >> str; 
+        ifile.close();
+
+        if (ifile.fail())
+        {
+            std::cerr << "Failed reading from temporary file in method 12" << std::endl;
+            exit(ERROR_WORKING_WITH_TEMP_FILE);
+        }
+
+        length += str.size();
+    }
+    res.first = length;
+    res.second = (double) length / numbers.size();
+
+    int status_ = remove(fn);
+    if (status_)
+    {
+        std::cerr << "Failed to delete temporary file in method 12" << std::endl;
+        exit(ERROR_WORKING_WITH_TEMP_FILE);
+    }
+
+    return res;
+}
+
+std::pair<size_t, double> method13_charconv(const std::vector<double> & numbers) {
+    std::pair<size_t, double> res;
+    long long length = 0;
+
+    char str[maxNumberSize];
+
+    for (auto x: numbers) {
+        std::to_chars(std::begin(str), std::end(str), x, std::chars_format::fixed);
+        length += strlen(str);
+    }
+
+    res.first = length;
+    res.second = (double) length / numbers.size();
+
+    return res;
+}
+
+//std::pair<size_t, double> method14_floaxie(const std::vector<double> & numbers) {
+    //std::pair<size_t, double> res;
+    //long long length = 0;
+
+    //char str[maxNumberSize];
+
+    //for (auto x: numbers) {
+        //std::to_chars(std::begin(str), std::end(str), x, std::chars_format::fixed);
+        //floaxie::ftoa(x, str);
+        //length += strlen(str);
+    //}
+
+    //res.first = length;
+    //res.second = (double) length / numbers.size();
+
+    //return res;
+//}
