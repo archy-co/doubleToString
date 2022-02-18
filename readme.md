@@ -7,21 +7,20 @@ Variant: <mark>4</mark>
 
 ### Compilation
 
-<mark>HOW TO COMPILE YOUR PROGRAM? (RECOMMENDED: ./comile.sh)</mark>
+<mark>program compiles as you run python script
+  ```$ python main.py 10 in.txt out.txt```</mark>
 
 ### Installation
 
-<mark>DESCRIBE THE INSTALLATION PROCESS (USE ./dependencies FOLDER)</mark>
-
-<mark>Note: For Python scripts, You must add `requirenments.txt` 
-file and add your env to the `.gitignore` file!</mark>
+<mark>clone repository and run python script</mark>
 
 ### Usage
 
-<mark>PROVIDE AN EXAMPLE OF HOW TO RUN YOUR PROGRAM (IT CAN BE A_flag COMMAND LINE WITH INPUT AND EXPECTED OUTPUT)</mark>
-
-<mark>Note: if your project needs or generates any data, media and so on -- put them
-into the data folder</mark> 
+<mark>```$ python main.py 10 in.txt out.txt```
+  
+To run experiments you have to execute python script, specify number of times that experiment will run, and two files: from first program will read data and second is to store results. These files doesn't require some specific names, as data is generated automatically at the beginning of each execution and is written to file that you specify.
+  
+After running program will print the minimum time for each method, and will check if all results coinside</mark>
 
 ### Important!
 
