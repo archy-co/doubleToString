@@ -29,28 +29,30 @@ After running program will print the minimum time for each method, and will chec
 ### Results
 
 <mark>
-  All methods are in src/methods.cpp file.
+  All methods are in src/methods.cpp file. Here you can find time required for each method to convert 1GB file with doubles to strings.
   
-| method               	| description                                 	|
-|----------------------	|---------------------------------------------	|
-| method1_stringstream 	| use std::stringstream from iostream library 	|
-| method2_to_string    	| use to_string from standard library         	|
-| method3_sprintf      	| use sprintf from csdio library              	|  
+| method               	| description                                 	| time(mcs) 	|
+|----------------------	|---------------------------------------------	|-----------	|
+| method1_stringstream 	| use std::stringstream from iostream library 	| 3220381   	|
+| method2_to_string    	| use to_string from standard library         	| 2885071   	|
+| method6_sprintf      	| use sprintf from csdio library              	| 2849224   	|
   </mark>
 
 # Additional tasks
 <mark>
   
-| method                 	| description                                                   	|
-|------------------------	|---------------------------------------------------------------	|
-| method4_boost          	| use boost::lexical_cast                                       	|
-| method5_qt             	| use QString::number from Qt                                   	|
-| method6_ruy            	| use Ryu algorythm                                             	|
-| method7_google         	| use Google double conversion                                  	|
-| method8_gctv           	| ...                                                           	|
-| method9_ostringstream  	| use std::ostringstream                                        	|
-| method10_strtk         	| ...                                                           	|
-| method11_custom        	| using custom implementation from  Stack overflow              	|
-| method12_write_to_file 	| write all doubles to file, then read from this file as string 	|
+| method                 	| description                                                   	| time(mcs) 	|
+|------------------------	|---------------------------------------------------------------	|-----------	|
+| method4_boost          	| use boost::lexical_cast                                       	| 5390497   	|
+| method5_qt             	| use QString::number from Qt                                   	| 1129615   	|
+| method6_ruy            	| use Ryu algorythm                                             	| 12794348  	|
+| method7_google         	| use Google double conversion                                  	| 306035    	|
+| method8_gctv           	| ...                                                           	| 2962320   	|
+| method9_ostringstream  	| use std::ostringstream                                        	| 3348719   	|
+| method10_strtk         	| ...                                                           	| 5466267   	|
+| method11_custom        	| using custom implementation from  Stack overflow              	| 285272    	|
+| method12_write_to_file 	| write all doubles to file, then read from this file as string 	| 317985684 	|
+| method13_to_wstring    	| using to_wstring                                              	| 3133414   	|
+| method14_floaxie       	| using ...                                                     	| 524469    	|
   
   <mark>
