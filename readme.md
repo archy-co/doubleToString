@@ -39,4 +39,18 @@ After running program will print the minimum time for each method, and will chec
   </mark>
 
 # Additional tasks
-<mark>IF APPLICABLE, LIST ALL THE EXTRA FEATURES YOU ADDED. PROVIDE DETAILS<mark>
+<mark>
+  
+| method                 	| description                                                   	|
+|------------------------	|---------------------------------------------------------------	|
+| method4_boost          	| use boost::lexical_cast                                       	|
+| method5_qt             	| use QString::number from Qt                                   	|
+| method6_ruy            	| use Ryu algorythm                                             	|
+| method7_google         	| use Google double conversion                                  	|
+| method8_gctv           	| ...                                                           	|
+| method9_ostringstream  	| use std::ostringstream                                        	|
+| method10_strtk         	| ...                                                           	|
+| method11_custom        	| using custom implementation from  Stack overflow              	|
+| method12_write_to_file 	| write all doubles to file, then read from this file as string 	|
+  
+  <mark>
