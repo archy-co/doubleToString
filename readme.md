@@ -14,12 +14,12 @@ Variant: <mark>4</mark>
 
 <mark>Clone repository and run python script</mark>
 
-#### Copyright note
-* **double-conversion** directory contains google's double conversion headers and source files only (https://github.com/google/double-conversion)
-* **ryu** directory contains ryu double conversion algoritm (https://github.com/ulfjack/ryu)
-* **cursom** is float to string implementation found on stack overflow. See link in custorm.h and custom.cpp for source
-* **floaxie** -- https://github.com/aclex/floaxie
-* **strtk** -- www.partow.net/programming/strtk/index.html
+#### Copyright note on subdirectories
+* **double-conversion** -- google's double conversion headers and source files (https://github.com/google/double-conversion)
+* **ryu** -- ryu double conversion algoritm (https://github.com/ulfjack/ryu)
+* **floaxie** -- Floaxie (https://github.com/aclex/floaxie)
+* **strtk** -- String toolkit (www.partow.net/programming/strtk/index.html)
+* **custom.h** & **custom.cpp** -- float to string implementation found on stack overflow (https://stackoverflow.com/questions/7228438/convert-double-float-to-string)
 
 
 ### Usage
