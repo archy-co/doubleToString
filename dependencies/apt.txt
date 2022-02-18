@@ -1,5 +1,4 @@
 cmake
 g++
-qt
-boost
-
+qt5-default
+libboost-all-dev
