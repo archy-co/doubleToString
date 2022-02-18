@@ -35,7 +35,7 @@ std::pair<size_t, double> method1_stringstream(const std::vector<double> & numbe
     size_t letter_count = ss.str().size();
 
     res.first = letter_count;
-    res.second = (double) letter_count/numbers.size();
+    res.second = static_cast<double> (letter_count) / numbers.size();
     return res;
 }
 
@@ -52,7 +52,7 @@ std::pair<size_t, double> method2_to_string(const std::vector<double> & numbers)
     }
   
     res.first = letter_count;
-    res.second = (double) letter_count/numbers.size();
+    res.second = static_cast<double> (letter_count) / numbers.size();
     return res;
 }
 
@@ -68,7 +68,7 @@ std::pair<size_t, double> method3_sprintf(const std::vector<double> & numbers) {
         counter++;
     }
     res.first = length;
-    res.second = (double)length / counter;
+    res.second = static_cast<double>(length) / counter;
 
     return res;
 }
@@ -85,7 +85,7 @@ std::pair<size_t, double> method4_boost(const std::vector<double> & numbers) {
         counter++;
     }
     res.first = length;
-    res.second = (double)length / counter;
+    res.second = static_cast<double>(length) / counter;
 
     return res;
 }
@@ -102,7 +102,7 @@ std::pair<size_t, double> method5_qt(const std::vector<double> & numbers) {
         counter++;
     }
     res.first = length;
-    res.second = (double)length / counter;
+    res.second = static_cast<double>(length) / counter;
 
     return res;
 }
@@ -117,7 +117,7 @@ std::pair<size_t, double> method6_ryu(const std::vector<double> & numbers) {
     }
 
     res.first = length;
-    res.second = (double) length / numbers.size();
+    res.second = static_cast<double> (length) / numbers.size();
 
     return res;
 }
@@ -141,7 +141,7 @@ std::pair<size_t, double> method7_google(const std::vector<double> & numbers) {
     }
 
     res.first = length;
-    res.second = (double) length / numbers.size();
+    res.second = static_cast<double> (length) / numbers.size();
 
     return res;
 }
@@ -158,7 +158,7 @@ std::pair<size_t, double> method8_gcvt(const std::vector<double> & numbers) {
     }
 
     res.first = length;
-    res.second = (double) length / numbers.size();
+    res.second = static_cast<double> (length) / numbers.size();
 
     return res;
 }
@@ -176,7 +176,7 @@ std::pair<size_t, double> method9_ostringstream(const std::vector<double> & numb
     size_t letter_count = oss.str().size();
 
     res.first = letter_count;
-    res.second = (double) letter_count/numbers.size();
+    res.second = static_cast<double> (letter_count) / numbers.size();
     return res;
 }
 
@@ -192,7 +192,7 @@ std::pair<size_t, double> method10_strtk(const std::vector<double> & numbers)
     }
 
     res.first = length;
-    res.second = (double) length/numbers.size();
+    res.second = static_cast<double> (length) / numbers.size();
     return res;
 }
 
@@ -208,7 +208,7 @@ std::pair<size_t, double> method11_custom(const std::vector<double> & numbers) {
     }
 
     res.first = length;
-    res.second = (double) length / numbers.size();
+    res.second = static_cast<double> (length) / numbers.size();
 
     return res;
 }
@@ -248,7 +248,7 @@ std::pair<size_t, double> method12_write_to_file(const std::vector<double> & num
         length += str.size();
     }
     res.first = length;
-    res.second = (double) length / numbers.size();
+    res.second = static_cast<double> (length) / numbers.size();
 
     int status_ = remove(fn);
     if (status_)
@@ -269,7 +269,7 @@ std::pair<size_t, double> method12_write_to_file(const std::vector<double> & num
     //}
 
     //res.first = length;
-    //res.second = (double) length / numbers.size();
+    //res.second = static_cast<double> (length) / numbers.size();
 
     //return res;
 //}
@@ -287,7 +287,7 @@ std::pair<size_t, double> method12_write_to_file(const std::vector<double> & num
     //}
 
     //res.first = length;
-    //res.second = (double) length / numbers.size();
+    //res.second = static_cast<double> (length) / numbers.size();
 
     //return res;
 //}
