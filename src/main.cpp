@@ -86,9 +86,9 @@ main (int argc, char **argv) {
         case 12:
             res = method12_write_to_file(numbers);
             break;
-        //case 13:
-            //res = method13_charconv(numbers);
-            //break;
+        case 14:
+            res = method14_floaxie(numbers);
+            break;
        default:
        {
             std::cerr << "Wrong method" << std::endl;
