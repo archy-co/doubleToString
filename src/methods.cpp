@@ -14,7 +14,7 @@
 #include "ryu/ryu.h"
 #include "double-conversion/double-to-string.h"
 #include "custom.h"
-//#include "floaxie/ftoa.h"
+#include "floaxie/ftoa.h"
 
 
 constexpr int maxNumberSize = 128;
@@ -290,20 +290,20 @@ std::pair<size_t, double> method13_to_wstring(const std::vector<double> & number
     //return res;
 //}
 
-//std::pair<size_t, double> method14_floaxie(const std::vector<double> & numbers) {
-    //std::pair<size_t, double> res;
-    //long long length = 0;
+std::pair<size_t, double> method14_floaxie(const std::vector<double> & numbers) {
+    std::pair<size_t, double> res;
+    long long length = 0;
 
-    //char str[maxNumberSize];
+    char str[maxNumberSize];
 
-    //for (auto x: numbers) {
-        //std::to_chars(std::begin(str), std::end(str), x, std::chars_format::fixed);
-        //floaxie::ftoa(x, str);
-        //length += strlen(str);
-    //}
+    for (auto x: numbers) {
+        std::to_chars(std::begin(str), std::end(str), x, std::chars_format::fixed);
+        floaxie::ftoa(x, str);
+        length += strlen(str);
+    }
 
-    //res.first = length;
-    //res.second = static_cast<double> (length) / numbers.size();
+    res.first = length;
+    res.second = static_cast<double> (length) / numbers.size();
 
-    //return res;
-//}
+    return res;
+}

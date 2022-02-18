@@ -89,6 +89,9 @@ main (int argc, char **argv) {
         case 13:
             res = method13_to_wstring(numbers);
             break;
+        case 14:
+            res = method14_floaxie(numbers);
+            break;
        default:
        {
             std::cerr << "Wrong method" << std::endl;

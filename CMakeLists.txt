@@ -134,7 +134,8 @@ target_link_libraries(${PROJECT_NAME} google-dtoa)
 
 target_include_directories(${PROJECT_NAME}
                     PUBLIC ${CMAKE_SOURCE_DIR}
-                    PUBLIC ${CMAKE_SOURCE_DIR}/include)
+                    PUBLIC ${CMAKE_SOURCE_DIR}/include
+                    PUBLIC ${CMAKE_SOURCE_DIR}/floaxie/include)
 
 
 ##########################################################

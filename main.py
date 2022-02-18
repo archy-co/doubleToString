@@ -18,7 +18,7 @@ def generate_data(input_fn: str):
 
 def experiment():
     EPSILON = 1e-16
-    NUM_METHODS = 13
+    NUM_METHODS = 14
     PROGAM_NAME = "dtos_time" + (".exe" if os.name == 'nt' else "")
     if not os.path.exists(f"./build/{PROGAM_NAME}"):
         raise ValueError(
