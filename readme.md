@@ -28,7 +28,15 @@ After running program will print the minimum time for each method, and will chec
 
 ### Results
 
-<mark>DESCRIBE THE RESULTS OF THE WORK YOU DID. WHAT DID YOU LEARN OR FIND INTERESTING?</mark>
+<mark>
+  All methods are in src/methods.cpp file.
+  
+| method               	| description                                 	|
+|----------------------	|---------------------------------------------	|
+| method1_stringstream 	| use std::stringstream from iostream library 	|
+| method2_to_string    	| use to_string from standard library         	|
+| method3_sprintf      	| use sprintf from csdio library              	|  
+  </mark>
 
 # Additional tasks
 <mark>IF APPLICABLE, LIST ALL THE EXTRA FEATURES YOU ADDED. PROVIDE DETAILS<mark>
