@@ -10,7 +10,7 @@ def generate_data(input_fn: str):
             int_ = random.randrange(100, 998)
             sign_ = random.choice([-1, 1])
             res = sign_ * (int_ + float_)
-            if i % 3 == 4:
+            if i % 3 == 0:
                 res = format(res, '.8E')
 
             f.write(str(res) + "\n")
@@ -19,7 +19,7 @@ def generate_data(input_fn: str):
 def experiment():
     EPSILON = 1e-16
     NUM_METHODS = 12
-    PROGAM_NAME = "dtos_time"
+    PROGAM_NAME = "dtos_time" + (".exe" if os.name == 'nt' else "")
     if not os.path.exists(f"./build/{PROGAM_NAME}"):
         raise ValueError(
             "C++ executable is not found in current directory. You must run this python script from the directory with C++ executable")
