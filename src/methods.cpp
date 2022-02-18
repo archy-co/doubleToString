@@ -222,10 +222,7 @@ std::pair<size_t, double> method12_write_to_file(const std::vector<double> & num
     ofile.clear();
     ofile.close();
     if (ofile.fail())
-    {
-        std::cerr << "Error initializing temporary file in method 12" << std::endl;
-        exit(ERROR_WORKING_WITH_TEMP_FILE);
-    }
+        throw std::ios_base::failure("Error initializing temporary file in method 12");
 
     std::ifstream ifile;
 
@@ -237,10 +234,7 @@ std::pair<size_t, double> method12_write_to_file(const std::vector<double> & num
         ofile << x;
         ofile.close();
         if (ofile.fail())
-        {
-            std::cerr << "Failed writing to temporary file in method 12" << std::endl;
-            exit(ERROR_WORKING_WITH_TEMP_FILE);
-        }
+            throw std::ios_base::failure("Failed writing to temporary file in method 12");
 
         std::string str;
 
@@ -249,10 +243,7 @@ std::pair<size_t, double> method12_write_to_file(const std::vector<double> & num
         ifile.close();
 
         if (ifile.fail())
-        {
-            std::cerr << "Failed reading from temporary file in method 12" << std::endl;
-            exit(ERROR_WORKING_WITH_TEMP_FILE);
-        }
+            throw std::ios_base::failure("Failed reading from temporary file in method 12");
 
         length += str.size();
     }
@@ -261,10 +252,7 @@ std::pair<size_t, double> method12_write_to_file(const std::vector<double> & num
 
     int status_ = remove(fn);
     if (status_)
-    {
-        std::cerr << "Failed to delete temporary file in method 12" << std::endl;
-        exit(ERROR_WORKING_WITH_TEMP_FILE);
-    }
+        throw std::ios_base::failure("Failed to delete temporary file in method 12");
 
     return res;
 }

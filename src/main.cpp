@@ -97,7 +97,7 @@ main (int argc, char **argv) {
     }
     auto finish_time = get_current_time_fenced();
 
-    std::cout << res.first << " " << res.second << std::endl;
+    //std::cout << res.first << " " << res.second << std::endl;
 
     std::ofstream time_res(TIME_RES_FN);
     time_res << to_us(finish_time - start_time);
