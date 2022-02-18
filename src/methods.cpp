@@ -273,7 +273,25 @@ std::pair<size_t, double> method13_to_wstring(const std::vector<double> & number
     res.second = (double) letter_count/numbers.size();
     return res;
 }
-//std::pair<size_t, double> method13_charconv(const std::vector<double> & numbers) {
+
+std::pair<size_t, double> method14_floaxie(const std::vector<double> & numbers) {
+    std::pair<size_t, double> res;
+    long long length = 0;
+
+    char str[maxNumberSize];
+
+    for (auto x: numbers) {
+        floaxie::ftoa(x, str);
+        length += strlen(str);
+    }
+
+    res.first = length;
+    res.second = static_cast<double> (length) / numbers.size();
+
+    return res;
+}
+
+//std::pair<size_t, double> method15_charconv(const std::vector<double> & numbers) {
     //std::pair<size_t, double> res;
     //long long length = 0;
 
@@ -289,21 +307,3 @@ std::pair<size_t, double> method13_to_wstring(const std::vector<double> & number
 
     //return res;
 //}
-
-std::pair<size_t, double> method14_floaxie(const std::vector<double> & numbers) {
-    std::pair<size_t, double> res;
-    long long length = 0;
-
-    char str[maxNumberSize];
-
-    for (auto x: numbers) {
-        std::to_chars(std::begin(str), std::end(str), x, std::chars_format::fixed);
-        floaxie::ftoa(x, str);
-        length += strlen(str);
-    }
-
-    res.first = length;
-    res.second = static_cast<double> (length) / numbers.size();
-
-    return res;
-}
