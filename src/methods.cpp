@@ -269,22 +269,22 @@ std::pair<size_t, double> method12_write_to_file(const std::vector<double> & num
     return res;
 }
 
-std::pair<size_t, double> method13_charconv(const std::vector<double> & numbers) {
-    std::pair<size_t, double> res;
-    long long length = 0;
+//std::pair<size_t, double> method13_charconv(const std::vector<double> & numbers) {
+    //std::pair<size_t, double> res;
+    //long long length = 0;
 
-    char str[maxNumberSize];
+    //char str[maxNumberSize];
 
-    for (auto x: numbers) {
-        std::to_chars(std::begin(str), std::end(str), x, std::chars_format::fixed);
-        length += strlen(str);
-    }
+    //for (auto x: numbers) {
+        //std::to_chars(std::begin(str), std::end(str), x, std::chars_format::fixed);
+        //length += strlen(str);
+    //}
 
-    res.first = length;
-    res.second = (double) length / numbers.size();
+    //res.first = length;
+    //res.second = (double) length / numbers.size();
 
-    return res;
-}
+    //return res;
+//}
 
 //std::pair<size_t, double> method14_floaxie(const std::vector<double> & numbers) {
     //std::pair<size_t, double> res;

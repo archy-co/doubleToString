@@ -14,4 +14,4 @@ std::pair<size_t, double> method9_ostringstream(const std::vector<double> & numb
 std::pair<size_t, double> method10_strtk(const std::vector<double> & numbers);
 std::pair<size_t, double> method11_custom(const std::vector<double> & numbers);
 std::pair<size_t, double> method12_write_to_file(const std::vector<double> & numbers);
-std::pair<size_t, double> method13_charconv(const std::vector<double> & numbers);
+//std::pair<size_t, double> method13_charconv(const std::vector<double> & numbers);
