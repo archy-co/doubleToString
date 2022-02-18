@@ -257,6 +257,22 @@ std::pair<size_t, double> method12_write_to_file(const std::vector<double> & num
     return res;
 }
 
+std::pair<size_t, double> method13_to_wstring(const std::vector<double> & numbers)
+{
+    std::pair<size_t, double> res;
+
+    size_t letter_count = 0;
+  
+    for (auto num : numbers)
+    {
+        auto curr_str = std::to_wstring(num);
+        letter_count += curr_str.size();
+    }
+  
+    res.first = letter_count;
+    res.second = (double) letter_count/numbers.size();
+    return res;
+}
 //std::pair<size_t, double> method13_charconv(const std::vector<double> & numbers) {
     //std::pair<size_t, double> res;
     //long long length = 0;
