@@ -1,3 +1,4 @@
 cmake
 g++
-
+qt5-default
+libboost-all-dev

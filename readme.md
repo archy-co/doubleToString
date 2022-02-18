@@ -3,28 +3,35 @@ Authors (team): <mark>[Yaroslav Revera](https://github.com/archy-co), [Hanna Yer
 Variant: <mark>4</mark>
 ## Prerequisites
 
-<mark>have CMAKE, GCC, Qt, and boost downloaded</mark>
+<mark>Have CMAKE, GCC, Qt, and boost downloaded</mark>
 
 ### Compilation
 
-<mark>program compiles as you run python script
+<mark>Program compiles as you run python script
   ```$ python main.py 10 in.txt out.txt```</mark>
 
 ### Installation
 
-<mark>clone repository and run python script</mark>
+<mark>Clone repository and run python script</mark>
+
+#### Copyright note
+* **double-conversion** directory contains google's double conversion headers and source files only (https://github.com/google/double-conversion)
+* **ryu** directory contains ryu double conversion algoritm (https://github.com/ulfjack/ryu)
+* **cursom** is float to string implementation found on stack overflow. See link in custorm.h and custom.cpp for source
+* **floaxie** -- https://github.com/aclex/floaxie
+* **strtk** -- www.partow.net/programming/strtk/index.html
+
 
 ### Usage
 
 <mark>```$ python main.py 10 in.txt out.txt```
   
-To run experiments you have to execute python script, specify number of times that experiment will run, and two files: from first program will read data and second is to store results. These files doesn't require some specific names, as data is generated automatically at the beginning of each execution and is written to file that you specify.
+To run experiments you have to execute python script, specify number of times that experiment will run, and two files: from first program will read data and second is to store results. These files doesn't require some specific names, as data is generated automatically at the beginning of each execution (if you have your specific input data you want to run just comment the line in python script that generates data) and is written to file that you specify.
   
-After running program will print the minimum time for each method, and will check if all results coinside</mark>
+After running program will print the minimum time for each method, and will check if all results of the method coinside</mark>
 
 ### Important!
-
-<mark>WHAT ELSE SHOULD WE KNOW ABOUT YOUR WORK? (E.G. KNOWN ISSUES, BUGS, SPECIAL BEHAVIOR ETC)</mark>
+Method #12 **write to file** runs about 75-80 times slower than other methods. Therefore in python script the number of runs to take min time is lower than for all the other methods by default. If you want, you can configure it for your own needs but current configurations are alright for normal run and comparison of times
 
 ### Results
 
@@ -53,14 +60,14 @@ and another one without ```write_to_file``` method:
 |------------------------	|---------------------------------------------------------------	|-----------	|
 | method4_boost          	| use boost::lexical_cast                                       	| 5390497   	|
 | method5_qt             	| use QString::number from Qt                                   	| 1129615   	|
-| method6_ruy            	| use [Ryu](https://github.com/ulfjack/ryu) algorythm             | 12794348  	|
+| method6_ruy            	| use [Ryu](https://github.com/ulfjack/ryu) algorythm               | 12794348  	|
 | method7_google         	| use [Google](https://github.com/google/double-conversion) double conversion                                  	| 306035    	|
-| method8_gctv           	| ...                                                           	| 2962320   	|
+| method8_gctv           	| use stdlib.h function to convert double to string              	| 2962320   	|
 | method9_ostringstream  	| use std::ostringstream                                        	| 3348719   	|
-| method10_strtk         	| ...                                                           	| 5466267   	|
-| method11_custom        	| using custom implementation from  [Stack overflow](https://stackoverflow.com/questions/7228438/convert-double-float-to-string)              	| 285272    	|
+| method10_strtk         	| use [String Toolkit Library](http://www.partow.net/programming/strtk/index.html)                                                          	| 5466267   	|
+| method11_custom        	| use custom implementation from  [Stack overflow](https://stackoverflow.com/questions/7228438/convert-double-float-to-string)              	| 285272    	|
 | method12_write_to_file 	| write all doubles to file, then read from this file as string 	| 317985684 	|
-| method13_to_wstring    	| using to_wstring                                              	| 3133414   	|
-| method14_floaxie       	| using [floaxie](https://github.com/aclex/floaxie) library       | 524469    	|
+| method13_to_wstring    	| use to_wstring                                                	| 3133414   	|
+| method14_floaxie       	| use [floaxie](https://github.com/aclex/floaxie) library           | 524469    	|
   
   <mark>
