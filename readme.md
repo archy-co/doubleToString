@@ -38,6 +38,14 @@ After running program will print the minimum time for each method, and will chec
 | method6_sprintf      	| use sprintf from csdio library              	| 2849224   	|
   </mark>
 
+  Here is histogram of different methods performance:
+  
+  ![cool1](https://user-images.githubusercontent.com/71673095/154725757-3f662f99-4861-4437-bad8-b66bdd6b65a3.png)
+  
+and another one without ```write_to_file``` method:
+  
+  ![cool](https://user-images.githubusercontent.com/71673095/154725297-a4080a50-6e29-4a13-bb1f-8205becfce90.png)
+
 # Additional tasks
 <mark>
   
@@ -45,14 +53,14 @@ After running program will print the minimum time for each method, and will chec
 |------------------------	|---------------------------------------------------------------	|-----------	|
 | method4_boost          	| use boost::lexical_cast                                       	| 5390497   	|
 | method5_qt             	| use QString::number from Qt                                   	| 1129615   	|
-| method6_ruy            	| use Ryu algorythm                                             	| 12794348  	|
-| method7_google         	| use Google double conversion                                  	| 306035    	|
+| method6_ruy            	| use [Ryu](https://github.com/ulfjack/ryu) algorythm             | 12794348  	|
+| method7_google         	| use [Google](https://github.com/google/double-conversion) double conversion                                  	| 306035    	|
 | method8_gctv           	| ...                                                           	| 2962320   	|
 | method9_ostringstream  	| use std::ostringstream                                        	| 3348719   	|
 | method10_strtk         	| ...                                                           	| 5466267   	|
-| method11_custom        	| using custom implementation from  Stack overflow              	| 285272    	|
+| method11_custom        	| using custom implementation from  [Stack overflow](https://stackoverflow.com/questions/7228438/convert-double-float-to-string)              	| 285272    	|
 | method12_write_to_file 	| write all doubles to file, then read from this file as string 	| 317985684 	|
 | method13_to_wstring    	| using to_wstring                                              	| 3133414   	|
-| method14_floaxie       	| using ...                                                     	| 524469    	|
+| method14_floaxie       	| using [floaxie](https://github.com/aclex/floaxie) library       | 524469    	|
   
   <mark>
