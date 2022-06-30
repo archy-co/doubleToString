@@ -16,7 +16,7 @@
 #include "custom.hpp"
 #include "floaxie/ftoa.h"
         
-constexpr int maxNumberSize = 128;
+constexpr int MAX_NUMBER_SIZE = 128;
 constexpr int ERROR_WORKING_WITH_TEMP_FILE = 7;
 
 std::pair<size_t, double> method1_stringstream(const std::vector<double> & numbers)
@@ -126,8 +126,8 @@ std::pair<size_t, double> method7_google(const std::vector<double> & numbers) {
     auto flags = double_conversion::DoubleToStringConverter::NO_FLAGS;
     double_conversion::DoubleToStringConverter dc(flags, NULL, NULL, 'e', -1, 1, 0, 0);
 
-    char str[maxNumberSize];
-    double_conversion::StringBuilder builder(str, maxNumberSize);
+    char str[MAX_NUMBER_SIZE];
+    double_conversion::StringBuilder builder(str, MAX_NUMBER_SIZE);
     builder.Reset();
 
     for (const auto& x: numbers) {
@@ -147,7 +147,7 @@ std::pair<size_t, double> method8_gcvt(const std::vector<double> & numbers) {
     std::pair<size_t, double> res;
     long long length = 0;
 
-    char str[maxNumberSize];
+    char str[MAX_NUMBER_SIZE];
 
     for (const auto& x: numbers) {
         gcvt(x, 9, str);
@@ -197,7 +197,7 @@ std::pair<size_t, double> method11_custom(const std::vector<double> & numbers) {
     std::pair<size_t, double> res;
     long long length = 0;
 
-    char str[maxNumberSize];
+    char str[MAX_NUMBER_SIZE];
 
     for (const auto& x: numbers) {
         double_to_string(x, str);
@@ -275,7 +275,7 @@ std::pair<size_t, double> method14_floaxie(const std::vector<double> & numbers) 
     std::pair<size_t, double> res;
     long long length = 0;
 
-    char str[maxNumberSize];
+    char str[MAX_NUMBER_SIZE];
 
     for (const auto& x: numbers) {
         floaxie::ftoa(x, str);
