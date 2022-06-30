@@ -28,7 +28,13 @@ main (int argc, char **argv) {
     std::string out_file = argv[3];
 
     std::vector<double> numbers;
-    read_numbers(in_file, &numbers);
+
+    auto r_status = read_numbers(in_file, &numbers);
+
+    if (r_status) {
+        std::cerr << "Error writing results" << std::endl;
+        return r_status;
+    }
 
     std::pair<size_t, double> res;
 
@@ -91,12 +97,16 @@ main (int argc, char **argv) {
     time_res << "\n";
     time_res.close();
 
-    write_res(out_file, res);
+    auto w_status = write_res(out_file, res);
+    if (w_status) {
+        std::cerr << "Error writing results" << std::endl;
+        return w_status;
+    }
 
     return 0;
 }
 
-bool read_numbers(std::string fn, std::vector<double> *numbers)
+int read_numbers(const std::string &fn, std::vector<double> *numbers)
 {
     std::ifstream file(fn);
     
@@ -119,8 +129,8 @@ bool read_numbers(std::string fn, std::vector<double> *numbers)
     return 0;
 }
 
-bool
-write_res (std::string fn, std::pair<size_t, double> res)
+int
+write_res (const std::string &fn, std::pair<size_t, double> res)
 {
     std::ofstream file(fn);
 

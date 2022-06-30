@@ -1,4 +1,4 @@
-// JJJakubJJ implementation found https://stackoverflow.com/questions/7228438/convert-double-float-to-string 
+// Watermeloned on JJJakubJJ implementation found https://stackoverflow.com/questions/7228438/convert-double-double-to-string 
 #include <stdio.h>
 
 int n_tu(int number, int count)
@@ -10,13 +10,12 @@ int n_tu(int number, int count)
     return result;
 }
 
-/*** Convert float to string ***/
-void float_to_string(float f, char r[])
+void double_to_string(double f, char r[])
 {
     long long int length, length2, i, number, position, sign;
-    float number2;
+    double number2;
 
-    sign = -1;   // -1 == positive number
+    sign = -1;
     if (f < 0)
     {
         sign = '-';
@@ -25,11 +24,10 @@ void float_to_string(float f, char r[])
 
     number2 = f;
     number = f;
-    length = 0;  // Size of decimal part
-    length2 = 0; // Size of tenth
+    length = 0;
+    length2 = 0;
 
-    /* Calculate length2 tenth part */
-    while( (number2 - (float)number) != 0.0 && !((number2 - (float)number) < 0.0) )
+    while( (number2 - static_cast<double>(number)) != 0.0 && !((number2 - static_cast<double>(number)) < 0.0) )
     {
         number2 = f * (n_tu(10.0, length2 + 1));
         number = number2;
@@ -37,7 +35,6 @@ void float_to_string(float f, char r[])
         length2++;
     }
 
-    /* Calculate length decimal part */
     for (length = (f > 1) ? 0 : 1; f > 1; length++)
         f /= 10;
 

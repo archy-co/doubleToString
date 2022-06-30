@@ -3,5 +3,5 @@
 int n_tu(int number, int count);
 
 /*** Convert float to string ***/
-void float_to_string(float f, char r[]);
+void double_to_string(double f, char r[]);
 

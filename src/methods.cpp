@@ -26,7 +26,7 @@ std::pair<size_t, double> method1_stringstream(const std::vector<double> & numbe
     std::stringstream ss;
     ss.precision(9);
 
-    for (auto num : numbers)
+    for (const auto& num : numbers)
         ss << num;
 
     size_t letter_count = ss.str().size();
@@ -42,7 +42,7 @@ std::pair<size_t, double> method2_to_string(const std::vector<double> & numbers)
 
     size_t letter_count = 0;
   
-    for (auto num : numbers)
+    for (const auto& num : numbers)
     {
         auto curr_str = std::to_string(num);
         letter_count += curr_str.size();
@@ -59,7 +59,7 @@ std::pair<size_t, double> method3_sprintf(const std::vector<double> & numbers) {
     size_t length = 0;
     int counter = 0;
     char str[200];
-    for (auto x : numbers) {
+    for (const auto& x : numbers) {
         sprintf(str, "%.6f", x);
         length += strlen(str);
         counter++;
@@ -76,7 +76,7 @@ std::pair<size_t, double> method4_boost(const std::vector<double> & numbers) {
     size_t length = 0;
     int counter = 0;
     std::string str;
-    for (auto x: numbers) {
+    for (const auto& x: numbers) {
         str = boost::lexical_cast<std::string>(x);
         length += str.size();
         counter++;
@@ -93,7 +93,7 @@ std::pair<size_t, double> method5_qt(const std::vector<double> & numbers) {
     long long length = 0;
     int counter = 0;
     QString str;
-    for (auto x: numbers) {
+    for (const auto& x: numbers) {
         str = QString::number(x, 'g', 9);
         length += str.size();
         counter++;
@@ -108,7 +108,7 @@ std::pair<size_t, double> method6_ryu(const std::vector<double> & numbers) {
     std::pair<size_t, double> res;
     long long length = 0;
 
-    for (auto x: numbers) {
+    for (const auto& x: numbers) {
         std::string a_str = d2fixed(x, 6);
         length += a_str.size();
     }
@@ -130,7 +130,7 @@ std::pair<size_t, double> method7_google(const std::vector<double> & numbers) {
     double_conversion::StringBuilder builder(str, maxNumberSize);
     builder.Reset();
 
-    for (auto x: numbers) {
+    for (const auto& x: numbers) {
         dc.ToFixed(x, 6, &builder);
         char *fstr = builder.Finalize();
         length += strlen(fstr);
@@ -149,7 +149,7 @@ std::pair<size_t, double> method8_gcvt(const std::vector<double> & numbers) {
 
     char str[maxNumberSize];
 
-    for (auto x: numbers) {
+    for (const auto& x: numbers) {
         gcvt(x, 9, str);
         length += strlen(str);
     }
@@ -167,7 +167,7 @@ std::pair<size_t, double> method9_ostringstream(const std::vector<double> & numb
     std::ostringstream oss;
     oss.precision(9);
 
-    for (auto num : numbers)
+    for (const auto& num : numbers)
         oss << num;
 
     size_t letter_count = oss.str().size();
@@ -182,7 +182,7 @@ std::pair<size_t, double> method10_strtk(const std::vector<double> & numbers)
     std::pair<size_t, double> res;
     long long length = 0;
 
-    for (auto num : numbers)
+    for (const auto& num : numbers)
     {
         std::string str = strtk::type_to_string<double>(num);
         length += str.size();
@@ -199,8 +199,8 @@ std::pair<size_t, double> method11_custom(const std::vector<double> & numbers) {
 
     char str[maxNumberSize];
 
-    for (auto x: numbers) {
-        float_to_string(x, str);
+    for (const auto& x: numbers) {
+        double_to_string(x, str);
         length += strlen(str);
     }
 
@@ -226,7 +226,7 @@ std::pair<size_t, double> method12_write_to_file(const std::vector<double> & num
     std::pair<size_t, double> res;
     long long length = 0;
 
-    for (auto x: numbers) {
+    for (const auto& x: numbers) {
         ofile.open(fn);
         ofile << x;
         ofile.close();
@@ -260,7 +260,7 @@ std::pair<size_t, double> method13_to_wstring(const std::vector<double> & number
 
     size_t letter_count = 0;
   
-    for (auto num : numbers)
+    for (const auto& num : numbers)
     {
         auto curr_str = std::to_wstring(num);
         letter_count += curr_str.size();
@@ -277,7 +277,7 @@ std::pair<size_t, double> method14_floaxie(const std::vector<double> & numbers) 
 
     char str[maxNumberSize];
 
-    for (auto x: numbers) {
+    for (const auto& x: numbers) {
         floaxie::ftoa(x, str);
         length += strlen(str);
     }
