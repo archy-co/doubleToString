@@ -22,7 +22,7 @@ Already we have implemented 14 methods.
 ## Prerequisites
 <mark>Have CMAKE, GCC, Qt, and boost installed</mark>
 
-### Installation
+## Installation
 Clone repository
 ```{bash}
 $ git clone https://github.com/archy-co/doubleToString.git
