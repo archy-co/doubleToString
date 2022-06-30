@@ -60,10 +60,11 @@ include(cmake/CompilerWarnings.cmake)
 #! Project main executable source compilation
 add_executable(${PROJECT_NAME}
     src/main.cpp
+    include/main.hpp
     src/methods.cpp
-    include/methods.h
+    include/methods.hpp
     strtk/strtk.hpp
-    include/custom.h
+    include/custom.hpp
     src/custom.cpp)
 
 

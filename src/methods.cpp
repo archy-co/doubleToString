@@ -13,14 +13,11 @@
 #include "strtk/strtk.hpp"
 #include "ryu/ryu.h"
 #include "double-conversion/double-to-string.h"
-#include "custom.h"
+#include "custom.hpp"
 #include "floaxie/ftoa.h"
-
-
+        
 constexpr int maxNumberSize = 128;
 constexpr int ERROR_WORKING_WITH_TEMP_FILE = 7;
-
-// TODO: Fix casts to C++ style
 
 std::pair<size_t, double> method1_stringstream(const std::vector<double> & numbers)
 {
@@ -290,20 +287,3 @@ std::pair<size_t, double> method14_floaxie(const std::vector<double> & numbers) 
 
     return res;
 }
-
-//std::pair<size_t, double> method15_charconv(const std::vector<double> & numbers) {
-    //std::pair<size_t, double> res;
-    //long long length = 0;
-
-    //char str[maxNumberSize];
-
-    //for (auto x: numbers) {
-        //std::to_chars(std::begin(str), std::end(str), x, std::chars_format::fixed);
-        //length += strlen(str);
-    //}
-
-    //res.first = length;
-    //res.second = static_cast<double> (length) / numbers.size();
-
-    //return res;
-//}
