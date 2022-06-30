@@ -1,4 +1,4 @@
-# Double to string conversion benchmark
+# Double to string conversion benchmark 🧐
 
 This project aims to compare performance of different C++ methods to convert double numbers to string.
 
@@ -78,7 +78,9 @@ If you want to add other methods or contribute other ways, open an issue or clon
 Fell free to contact us anytime and ask some questions or give your feedback and suggestions.
 
 ## Authors:
-[Hanna Yershova](https://github.com/hannusia), [Yaroslav Revera](https://github.com/archy-co)
+[Hanna Yershova](https://github.com/hannusia)
+
+[Yaroslav Revera](https://github.com/archy-co)
 
 ## License
 MIT License
